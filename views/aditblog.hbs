@@ -1,0 +1,81 @@
+<form method="post" action="/edited/{{s.id}}" >
+    <div id="page_content">
+        <div id="page_content_inner">
+            <div class = "jumbotron text-center">
+                <h1 class="lead">EDIT BLOG DETAILS {{s}}</h1>
+            </div>
+
+            <div class="md-card">
+                <div class="md-card-content large-padding">
+                    <form id="form_validation" class="uk-form-stacked">
+                        <div class="uk-grid" data-uk-grid-margin>
+
+
+                            <div class="uk-width-medium-1-2">
+                                <div class="parsley-row">
+                                    <label for="fullname">TITLE<span class="req">*</span></label>
+                                    <input type="text" name="title"value="{{s.title}}" required class="md-input" />
+                                </div>
+                            </div>
+
+                            <div class="uk-grid">
+                                <div class="uk-width-1-1">
+                                    <div class="parsley-row">
+                                        <label for="message">DESCRIPTION (Full Detail)</label>
+                                        <textarea class="md-input" name="description" value="{{s.description}}" cols="10" rows="8" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message = "Come on! You need to enter at least a 20 caracters long comment.."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="md-card">
+                                <div class="md-card-content">
+                                    <h3 class="heading_a">
+                                        Upload Image For Blog
+                                    </h3>
+                                    <div class="uk-grid">
+                                        <div class="uk-width-1-1">
+                                            <div id="file_upload-drop" class="uk-file-upload">
+
+                                                <a class="uk-form-file md-btn">Choose file<input id="image" type="file"></a>
+
+                                            </div>
+                                            <div id="file_upload-progressbar" class="uk-progress uk-hidden">
+                                                <div class="uk-progress-bar" style="width:0">0%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="uk-grid" data-uk-grid-margin>
+                                <div class="uk-width-medium-1-2">
+                                    <div class="parsley-row uk-margin-top">
+                                        <label for="val_birth"> Date<span class="req">*</span></label>
+                                        <input type="text" name="date"value="{{s.date}}" id="date" required class="md-input" data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (MM.DD.YYYY)" data-uk-datepicker="{format:'MM.DD.YYYY'}" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="uk-width-medium-1-2">
+                                <div class="parsley-row">
+                                    <label for="tags">TAGs<span class="req">*</span></label>
+                                    <input type="text" name="tag" value="{{s.tag}}" required class="md-input" />
+                                </div>
+                            </div>
+
+
+                            <div class="uk-grid">
+                                <div class="uk-width-1-1">
+                                    <button type="submit" class="md-btn md-btn-primary">EDITED</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

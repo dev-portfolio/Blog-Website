@@ -1,0 +1,69 @@
+
+
+CRUD basics of any website dont need any validations like if (err0rs.length<0) but  to show edit msg , delete msg ; simple flash success msgs will 
+be used !
+but in login signup it needs to have validations with flash here must come ok:)
+
+QUESTION :" WHY PARTIAL FOLDER FOR _msg.hbs file"??
+
+why _ is used for _msg.hbs ??			
+
+			
+					how to validate password containing english , number , special characters?
+					ANS : USE Express Validators 
+					
+
+					export const registrationSchema = {
+
+      "email": {
+
+          notEmpty: true,
+
+          isEmail: {
+
+              errorMessage: "Invalid Email"
+
+          }
+
+      },
+
+      "password": {
+
+          notEmpty: true,
+
+          isLength: {
+
+              options: [{ min: 12}],
+
+              errorMessage: "Must be at least 12 characters"
+
+          },
+
+          matches: {
+
+              options: ["(?=.*[a-zA-Z])(?=.*[0-9]+).*", "g"],
+
+              errorMessage: "Password must be alphanumeric."
+
+          },
+
+          errorMessage: "Invalid password"
+
+      }
+
+};
+
+
+
+ var mongoose = require('mongoose');
+
+var Schema = mongoose.Schema;
+
+var photoSchema = new Schema({
+
+  path:  { type: String },
+
+  caption: { type: String }
+  });
+
+module.exports = mongoose.model('Photos', photoSchema);

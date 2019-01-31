@@ -1,0 +1,45 @@
+<head>
+    <link rel="stylesheet" href="assets/css/login_page.min.css" />
+</head>
+
+<body class="login_page">
+<div class="login_page_wrapper">
+    <div class="md-card" id="login_card">
+        <div class="md-card-content large-padding" id="login_form">
+
+            <form method="post" action="/signinup">
+                <div class="uk-form-row">
+                    <label for="login_username">Name</label>
+                    <input class="md-input" type="text" value="{{username}}" name="username">
+                </div>
+                <div class="uk-form-row">
+                    <label for="login_email_reset"> Email Address</label>
+                    <input class="md-input" type="text" value="{{email}}"  name="email">
+                </div>
+                <div class="uk-form-row">
+                    <label for="login_password">Password</label>
+                    <input class="md-input" type="password" value="{{password}}"  name="password">
+                </div>
+                <div class="uk-form-row">
+                    <label for="login_password"> Confirm Password</label>
+                    <input class="md-input" type="password"value="{{password2}}"  name="password2">
+                </div>
+
+                <div class="uk-form-row">
+                    <label for="phone"> Phone Number</label>
+                    <input class="md-input" type="number" value="{{phone}}" name="phone">
+                </div>
+
+                <div class="uk-margin-medium-top">
+                    <button type="submit" class="md-btn md-btn-danger md-btn-block md-btn-large">Sign UP</button>
+                </div>
+                <br>
+                <div class="uk-margin-top">
+                    <a href="/login" id="login_help_show" class="uk-float-right">Already Have Account ?</a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
